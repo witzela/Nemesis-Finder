@@ -1,8 +1,22 @@
 extends layout
 block content
-    script(defer="defer" src="/javascripts/Controller.js")
-    .mainContent
-        .mainContentBG
-        .titleText.
-            Line Eater
-        .bodyLine
+	script(defer="defer" src="/javascripts/Controller.js")
+	.landingPage
+		.mainContentBG
+		.topBarWrapper
+			.topBar
+				.topOption#about.
+					About
+				.topOption#mostAthletic.
+					Best
+				.topOption#somethingElse.
+					More
+		.middleArea
+			.steps
+			.searchTitle.
+				Step Counter
+			form#searchForm(autocomplete="on")
+				input.searchBox(type="text" placeholder="Summoner Name" autocomplete="on")
+				input.searchButton(type="submit" value="Search")
+				.searchDescription.
+					How fit is your champion?
