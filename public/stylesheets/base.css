@@ -107,8 +107,8 @@ This is the style sheet for the main landing page of the website
     .landingPage .middleArea #searchForm .searchBox {
       outline: none;
       border: none;
-      border-radius: 2px;
       border: 1px solid #ECF0F1;
+      border-radius: 2px 0px 0px 2px;
       height: 22px;
       width: 20%;
       padding-left: 6px;
