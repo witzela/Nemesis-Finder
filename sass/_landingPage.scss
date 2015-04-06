@@ -46,11 +46,11 @@ This is the style sheet for the main landing page of the website
                 padding-left: 4px;
                 padding-right: 4px;
 
-                -webkit-transition: all .15s ease;
-                -moz-transition: all .15s ease;
-                -ms-transition: all .15s ease;
-                -o-transition: all .15s ease;
-                transition: all .15s ease;
+                // -webkit-transition: all .15s ease;
+                // -moz-transition: all .15s ease;
+                // -ms-transition: all .15s ease;
+                // -o-transition: all .15s ease;
+                // transition: all .15s ease;
             }
             .topOption:hover {
                 border-bottom: 2px solid $highlight;

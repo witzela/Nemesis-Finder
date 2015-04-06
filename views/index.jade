@@ -5,18 +5,21 @@ block content
 		.mainContentBG
 		.topBarWrapper
 			.topBar
-				.topOption#about.
-					About
-				.topOption#mostAthletic.
-					Best
-				.topOption#somethingElse.
-					More
+				.topOption#about
+					a(href="/About").
+						About
+				.topOption#best
+					a(href="/Best").
+						Best
+				.topOption#more
+					a(href="/More").
+						More
 		.middleArea
 			.steps
 			.searchTitle.
-				Step Counter
+				Item Trees
 			form#searchForm(autocomplete="on")
 				input.searchBox(type="text" placeholder="Summoner Name" autocomplete="on")
-				input.searchButton(type="submit" value="Search")
+				input.searchButton(type="submit" value="Go!")
 				.searchDescription.
-					Analyze your build orders.
+					Perfect your build order.

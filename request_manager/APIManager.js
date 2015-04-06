@@ -62,8 +62,9 @@ APIManager.checkAllowedRequest = function() {
 
 	return false;
 }
- 
-// returns the data from the request or an error string
+
+// makes a request to a passed url
+// calls the callback for the data from the request or an error string
 APIManager.makeRequest = function (url, callback) {
 
 	if(!this.checkAllowedRequest()) {

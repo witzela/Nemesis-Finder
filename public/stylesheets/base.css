@@ -82,9 +82,7 @@ This is the style sheet for the main landing page of the website
         font-size: 16px;
         padding-bottom: 4px;
         padding-left: 4px;
-        padding-right: 4px;
-        -webkit-transition: all .15s ease;
-        transition: all .15s ease; }
+        padding-right: 4px; }
       .landingPage .topBarWrapper .topBar .topOption:hover {
         border-bottom: 2px solid #4c82ef;
         cursor: pointer; }

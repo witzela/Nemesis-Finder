@@ -24,7 +24,7 @@ router.get('/data*', function(req, res, next) {
 router.get('/*', function (req, res, next) {
 	// var queryData = url.parse(req.url, true).query;
 
-    res.render('index', { title: 'Ward Tracker'});
+    res.render('index', { title: 'Item Trees'});
 });
 
 module.exports = router;
