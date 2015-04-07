@@ -12,11 +12,34 @@ router.get('/data*', function(req, res, next) {
     if(queryData.name) {
 		// console.log("Requested: " + queryData.name);
 
-		var callback = function (data) {
+		// used when there's an error. Just returns whatever and doesn't try to do more things.
+		var errorCallback = function (data) {
 			res.end(data);
 		}
 
-		APIManager.getSummonerData(queryData.name, callback);
+
+		// used when there's a succcessful request for summoner data (it does more with the data)
+		var callback = function (data) {
+
+			// parses the data and gets the summoner ID to give to generate the match history for the client
+			var jsonData = JSON.parse(data);
+			var username;
+			for(username in jsonData) {
+				// gets the first element of the json
+				break;
+			}
+			console.log("Summoner id: " + jsonData[username].id);
+
+			var innerCallback = function (innerData) {
+				res.end(innerData);
+			}
+
+			// Calls to get the match history for the requested successful user
+			APIManager.getMatchHistory(jsonData[username].id, innerCallback, errorCallback);
+		}
+
+		// requests the API manager to get the summoner data, tells it to use the above callbacks accordingly
+		APIManager.getSummonerData(queryData.name, callback, errorCallback);
     }
 }); 
 

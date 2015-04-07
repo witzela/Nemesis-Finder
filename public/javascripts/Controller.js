@@ -47,7 +47,7 @@ $(document).ready(function() {
 
 				// data has data from the server as a response to summoner name
 				if(data == "error") {
-					messageToDisplay = "Server Error.";
+					messageToDisplay = "Server error.";
 				}
 				else if(data == "not found") {
 					messageToDisplay = "Summoner not found.";
@@ -62,6 +62,8 @@ $(document).ready(function() {
 
 				clearInterval(searchingAnimation);
 				searchingAnimation = null;
+
+				// sets the text of the description to the response
 				$('.searchDescription').text(messageToDisplay);
 			}
 		);

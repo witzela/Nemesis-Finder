@@ -65,7 +65,7 @@ APIManager.checkAllowedRequest = function() {
 
 // makes a request to a passed url
 // calls the callback for the data from the request or an error string
-APIManager.makeRequest = function (url, callback) {
+APIManager.makeRequest = function (url, callback, errorCallback) {
 
 	if(!this.checkAllowedRequest()) {
 		// console.log("No allowed req");
@@ -80,29 +80,33 @@ APIManager.makeRequest = function (url, callback) {
 		}
 		else {
 			if(response.statusCode == 500) {
-				callback("error");
+				errorCallback("error");
 			}
 			else if(response.statusCode == 429) {
 				// console.log("Overload their side.");
-				callback("overload");
+				errorCallback("overload");
 			}
 			else if(response.statusCode == 404) {
-				callback("not found");
+				errorCallback("not found");
 			}
 			else {
-				callback("error");
+				errorCallback("error");
 			}
 		}
 	});
 }
 
 // used to call API for summoner data
-APIManager.getSummonerData = function (summonerName, callback) {
+APIManager.getSummonerData = function (summonerName, callback, errorCallback) {
 	// console.log("retrieving summoner Data");
-	var summonerData = this.makeRequest("https://na.api.pvp.net/api/lol/" + this.region + "/v1.4/summoner/by-name/" + summonerName + "?api_key=" + this.API_Key , callback);
+	var summonerData = this.makeRequest("https://na.api.pvp.net/api/lol/" + this.region + "/v1.4/summoner/by-name/" + summonerName + "?api_key=" + this.API_Key , callback, errorCallback);
 	// console.log("Returning data: " + summonerData);
 	// return summonerData;
 	
+}
+
+APIManager.getMatchHistory = function (summonerID, callback, errorCallback) {
+	var matchHistoryData = this.makeRequest("https://na.api.pvp.net/api/lol/" + this.region + "/v2.2/matchhistory/" + summonerID + "?api_key="+this.API_Key, callback, errorCallback);
 }
 
 //TODO: 40 requests for summoner data is allowed per call. optomize
