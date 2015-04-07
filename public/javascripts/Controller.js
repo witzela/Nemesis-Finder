@@ -22,17 +22,19 @@ $(document).ready(function() {
 		// sets the Searching... animation running
 		searchingAnimation = setInterval(function() {
 			var dotsToAdd = "";
+			var spacesToAdd = "";
 			for(var i = 0; i < searchingDots; i++) {
+				spacesToAdd += " ";
 				dotsToAdd += ".";
 			}
 
-			$('.searchDescription').text("Searching" + dotsToAdd);
+			$('.searchDescription').text(spacesToAdd + "Searching" + dotsToAdd);
 
 			searchingDots++;
 			if(searchingDots > 4) {
 				searchingDots = 0;
 			}
-		}, 100);
+		}, 250);
 
 		// does a get request to the server for a specified summoner
 		$.get(
@@ -47,12 +49,16 @@ $(document).ready(function() {
 				if(data == "error") {
 					messageToDisplay = "Server Error.";
 				}
-				else if(data == "overload") {
-					messageToDisplay = "Too amny summoners are refreshing. Please try again.";
+				else if(data == "not found") {
+					messageToDisplay = "Summoner not found.";
 				}
-				// else {
-				// 	console.log("Sucess! Data: \n" + data);
-				// }
+				else if(data == "overload") {
+					messageToDisplay = "Too many summoners are refreshing. Please try again.";
+				}
+				else {
+					$('.searchBox').val("");
+					// console.log("Sucess! Data: \n" + data);
+				}
 
 				clearInterval(searchingAnimation);
 				searchingAnimation = null;

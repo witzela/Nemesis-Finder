@@ -1,3 +1,3 @@
-# Ward Tracker
+# Item Trees
 
-An application which provides insights into a requested player's warding patterns in League of Legends
+An application which provides insights into a player's build order patterns in League of Legends

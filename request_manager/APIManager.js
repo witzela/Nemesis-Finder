@@ -86,7 +86,12 @@ APIManager.makeRequest = function (url, callback) {
 				// console.log("Overload their side.");
 				callback("overload");
 			}
-			callback("error");
+			else if(response.statusCode == 404) {
+				callback("not found");
+			}
+			else {
+				callback("error");
+			}
 		}
 	});
 }
