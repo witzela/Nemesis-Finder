@@ -14,7 +14,7 @@ APIManager.API_Key = process.env.riotAPIKey;
 
 if(APIManager.API_Key == undefined) {
 	console.log("API Key undefined. Please set the environemental variable or hardcode it. Now crashing.");
-	APIManager.lol();
+	APIManager.YOU_NEED_A_API_KEY_ENVIRONMENT_VARIABLE_NAMED_riotAPIKey();
 }
 
 // console.log("Your api key: " + process.env.riotAPIKey);
