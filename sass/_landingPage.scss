@@ -33,6 +33,10 @@ This is the style sheet for the main landing page of the website
         color: white;
     }
 
+    .blackText {
+        color: black;
+    }
+
     .redBackground {
         background-color: $accent;
 
@@ -69,7 +73,7 @@ This is the style sheet for the main landing page of the website
                 padding-right: 4px;
             }
             .topOption:hover {
-                border-bottom: 2px solid $highlight;
+                border-bottom: 2px solid white;
                 cursor: pointer;
             }
         }
@@ -79,8 +83,7 @@ This is the style sheet for the main landing page of the website
 
         position: absolute;
         left: 0;
-        top: 0;
-        padding-top: 10em;
+        top: 10em;
 
         width: 100%;
 

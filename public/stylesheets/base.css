@@ -72,6 +72,8 @@ This is the style sheet for the main landing page of the website
     color: #e74c3c; }
   .landingPage .whiteText {
     color: white; }
+  .landingPage .blackText {
+    color: black; }
   .landingPage .redBackground {
     background-color: #e74c3c;
     position: absolute;
@@ -97,13 +99,12 @@ This is the style sheet for the main landing page of the website
         padding-left: 4px;
         padding-right: 4px; }
       .landingPage .topBarWrapper .topBar .topOption:hover {
-        border-bottom: 2px solid #4c82ef;
+        border-bottom: 2px solid white;
         cursor: pointer; }
   .landingPage .middleArea {
     position: absolute;
     left: 0;
-    top: 0;
-    padding-top: 10em;
+    top: 10em;
     width: 100%;
     z-index: -1; }
     .landingPage .middleArea .steps {

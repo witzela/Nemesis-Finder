@@ -5,20 +5,20 @@ block content
 		.redBackground
 		.topBarWrapper
 			.topBar
-				.topOption#about
-					a(href="/About").
-						About
-				.topOption#best
-					a(href="/Best").
-						Best
-				.topOption#more
-					a(href="/More").
-						More
+				//- #about
+				a.topOption(href="/About").
+					About
+				//- .topOption#best
+				a.topOption(href="/Best").
+					Best
+				//- .topOption#more
+				a.topOption(href="/More").
+					More
 		.middleArea
 			//- .steps
 			//- .horns
 			.searchTitle.
-				Nemesis<span class="whiteText">.</span>
+				Nemesis<span class="blackText">.</span>
 			form#searchForm(autocomplete="on")
 				input.searchBox(type="text" placeholder="Summoner Name" autocomplete="on")
 				input.searchButton(type="submit" value="Go!")
