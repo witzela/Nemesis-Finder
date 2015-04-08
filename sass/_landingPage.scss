@@ -51,6 +51,26 @@ This is the style sheet for the main landing page of the website
         z-index: -3;
     }
 
+    .redPattern {
+        display: none;
+
+        position: absolute;
+        top: 16em;
+        left: 0;
+
+        width: 100%;
+        height: 8px;
+        z-index: -3;
+
+        background: repeating-linear-gradient(
+          45deg,
+          $accent,
+          $accent 1px,//10
+          $dark 1px,//10
+          $dark 2px
+        );
+    }
+
     .teeeeeeeeeemo {
         position: absolute;
         bottom: 0;
@@ -71,7 +91,7 @@ This is the style sheet for the main landing page of the website
         width: 100%;
         height: 100%;
 
-        text-align: center;
+        text-align: center;  
 
         z-index: -2;
 
@@ -92,6 +112,10 @@ This is the style sheet for the main landing page of the website
             .topOption:hover {
                 border-bottom: 2px solid white;
                 cursor: pointer;
+            }
+
+            #nemesisTop {
+                font-size: 20px;
             }
         }
     }
