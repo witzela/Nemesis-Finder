@@ -85,12 +85,14 @@ var parseMatchData = function (matchData) {
 		break;
 	}
 
-	for(thing in matchData[matchArray][0]) {
-		break;
-	}
+	for(var i = 0; i < matchData[matchArray].length; i++) {
+		// queueType
+		parsedData += "Match " + i + ": " + matchData[matchArray][i].queueType + "    |    \n";// matchData[matchArray]
 
-	parsedData += "Match 1:\n";
-	parsedData += JSON.stringify(matchData[matchArray][0]);
+		// parsedData += JSON.stringify(matchData[matchArray][0]);
+
+		// break;
+	}
 
 	// parsedData += matchArray[0];
 
