@@ -2,7 +2,7 @@ extends layout
 block content
 	script(defer="defer" src="/javascripts/Controller.js")
 	.landingPage
-		.mainContentBG
+		.redBackground
 		.topBarWrapper
 			.topBar
 				.topOption#about
@@ -15,11 +15,14 @@ block content
 					a(href="/More").
 						More
 		.middleArea
-			.steps
+			//- .steps
+			//- .horns
 			.searchTitle.
-				Item Trees
+				Nemesis<span class="whiteText">.</span>
 			form#searchForm(autocomplete="on")
 				input.searchBox(type="text" placeholder="Summoner Name" autocomplete="on")
 				input.searchButton(type="submit" value="Go!")
 				.searchDescription.
-					Perfect your build order.
+					Who is your League of Legends nemesis?
+		.bodyArea
+			.resultText

@@ -16,12 +16,34 @@ This is the style sheet for the main landing page of the website
     width: 100%;
     height: 100%;
 
-    text-align: center;
+    text-align: center; 
 
     // font-family: "Cabin";
     font-family: 'MuseoSans300', sans-serif;
 
+    color: white;
+
     z-index: -3;
+
+    .accentText {
+        color: $accent;
+    }
+
+    .whiteText {
+        color: white;
+    }
+
+    .redBackground {
+        background-color: $accent;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 16em;
+        z-index: -3;
+    }
 
     .topBarWrapper {
         position: absolute;
@@ -33,7 +55,7 @@ This is the style sheet for the main landing page of the website
         z-index: -2;
 
         .topBar {
-            margin-top: 4%;
+            margin-top: 3em;
 
             .topOption {
                 display: inline-block;
@@ -45,12 +67,6 @@ This is the style sheet for the main landing page of the website
                 padding-bottom: 4px;
                 padding-left: 4px;
                 padding-right: 4px;
-
-                // -webkit-transition: all .15s ease;
-                // -moz-transition: all .15s ease;
-                // -ms-transition: all .15s ease;
-                // -o-transition: all .15s ease;
-                // transition: all .15s ease;
             }
             .topOption:hover {
                 border-bottom: 2px solid $highlight;
@@ -60,6 +76,13 @@ This is the style sheet for the main landing page of the website
     }
 
     .middleArea {
+
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-top: 10em;
+
+        width: 100%;
 
         z-index: -1;
 
@@ -72,16 +95,23 @@ This is the style sheet for the main landing page of the website
             top: 18%;
             left: 50%;
 
-            background: url('/images/steps.png') no-repeat scroll center center transparent;
-            background: url('/images/steps.png') no-repeat scroll center top/cover transparent;
+            // background: url('/images/nemesis.png') no-repeat scroll center center transparent;
+            // background: url('/images/nemesis.png') no-repeat scroll center top/cover transparent;
 
             z-index: -1;
         }
 
+        .horns {
+            width: 15%;
+            height: 40px;
+            z-index: -1;
+
+            background: url('/images/nemesis.png') no-repeat scroll center center transparent;
+            background: url('/images/nemesis.png') no-repeat scroll center top/cover transparent;
+        }
         .searchTitle {
             font-size: 24px;
 
-            margin-top: 16%;
             margin-bottom: 8px;
 
             font-family: 'MuseoSans500', sans-serif;
@@ -91,18 +121,16 @@ This is the style sheet for the main landing page of the website
                 outline: none;
                 border: none;
 
-                // border-radius: 2px;
                 border: 1px solid $light;
                 border-radius: 2px 0px 0px 2px;
 
                 height: 22px;
-                width: 20%;
+                width: 300px;
                 padding-left: 6px;
 
                 font-size: 12px;
             }
             .searchBox:focus {
-                // border: 1px solid $highlight;
                 box-shadow: 0 0 2px $highlight;
             }
 
@@ -110,7 +138,6 @@ This is the style sheet for the main landing page of the website
                 border: none;
                 outline: none;
 
-                //background-color: $light;
                 background: none;
                 background-color: white;
                 border: 1px solid $light;
@@ -127,10 +154,24 @@ This is the style sheet for the main landing page of the website
             .searchButton:active {
                 box-shadow: inset 0px 1px 2px 0px $medium;
             }
-            .searchDescription {
-                margin-top: 14px;
-                font-size: 14px;
-            }
+        }
+        .searchDescription {
+            margin-top: 14px;
+            font-size: 14px;
+
+            // color: black;
+        }
+    }
+
+    .bodyArea {
+        position:absolute;
+        top: 19em;
+        left: 0;
+
+        width: 100%;
+
+        .resultText {
+            color: black;
         }
     }
 }

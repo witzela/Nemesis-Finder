@@ -43,7 +43,7 @@ $(document).ready(function() {
 			function(data) {
 				currentlySearching = false;
 
-				var messageToDisplay = data;
+				var messageToDisplay = "Error!!!";
 
 				// data has data from the server as a response to summoner name
 				if(data == "error") {
@@ -58,6 +58,9 @@ $(document).ready(function() {
 				else {
 					$('.searchBox').val("");
 					// console.log("Sucess! Data: \n" + data);
+					messageToDisplay = "Success! Please choose a match:";
+					
+					$('.resultText').text(data);
 				}
 
 				clearInterval(searchingAnimation);

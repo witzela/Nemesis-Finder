@@ -47,7 +47,7 @@ router.get('/data*', function(req, res, next) {
 router.get('/*', function (req, res, next) {
 	// var queryData = url.parse(req.url, true).query;
 
-    res.render('index', { title: 'Item Trees'});
+    res.render('index', { title: 'League Nemesis'});
 });
 
 module.exports = router;
