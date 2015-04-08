@@ -60,7 +60,7 @@ $(document).ready(function() {
 					// console.log("Sucess! Data: \n" + data);
 					messageToDisplay = "Success! Please choose a match:";
 					
-					$('.resultText').text(data);
+					parseMatchData(JSON.parse(data));
 				}
 
 				clearInterval(searchingAnimation);
@@ -74,3 +74,25 @@ $(document).ready(function() {
 		return false;
 	});
 });
+
+var parseMatchData = function (matchData) {
+	var parsedData = "";
+
+	// make the variable matchArray contain the array of Matches
+	for(matchArray in matchData) {
+		// console.log("Data: " + matchArray);
+		// console.log("\n\nData 2: " + matchData[matchArray]);
+		break;
+	}
+
+	for(thing in matchData[matchArray][0]) {
+		break;
+	}
+
+	parsedData += "Match 1:\n";
+	parsedData += JSON.stringify(matchData[matchArray][0]);
+
+	// parsedData += matchArray[0];
+
+	$('.resultText').text(parsedData);
+}
