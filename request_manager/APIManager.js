@@ -78,7 +78,7 @@ APIManager.makeRequest = function (url, callback, errorCallback) {
 		if (!error && response.statusCode == 200) {
 			callback(body);
 		}
-		else {
+		else { 
 			if(response.statusCode == 500) {
 				errorCallback("error");
 			}
@@ -109,4 +109,45 @@ APIManager.getMatchHistory = function (summonerID, callback, errorCallback) {
 	var matchHistoryData = this.makeRequest("https://na.api.pvp.net/api/lol/" + this.region + "/v2.2/matchhistory/" + summonerID + "?api_key="+this.API_Key, callback, errorCallback);
 }
 
+APIManager.getChallengerAPI = function (beginDate, callback, errorCallback) {
+	var challengerAPIData = this.makeRequest("https://na.api.pvp.net/api/lol/na/v4.1/game/ids?beginDate=" + beginDate + "&api_key=" + this.API_Key, callback, errorCallback);
+}
+
+APIManager.getMostRecentChallengerAPI = function (beginDate, callback, errorCallback) {
+	var currentTime = Date.now();
+
+	console.log("CurrentTime: " + currentTime);
+
+	var challengerAPIData = this.makeRequest("https://na.api.pvp.net/api/lol/na/v4.1/game/ids?beginDate=" + beginDate + "&api_key=" + this.API_Key, callback, errorCallback);
+}
+
+var currentTime = Date.now();
+
+console.log("CurrentTime: " + currentTime);
+
+var getTruncatedFiveMinTime = function(timeVar) {
+	timeVar *= 0.01;
+	timeVar = Math.floor(timeVar);
+	timeVar *= 100;
+	return timeVar;
+}
+
+currentTime = getTruncatedFiveMinTime(currentTime);
+
+console.log(currentTime + " needs to be something like: 1428314700");
+
 //TODO: 40 requests for summoner data is allowed per call. optomize
+
+/*
+Example Requests:
+
+API Challenge (list of games since epoch) (URF)
+https://na.api.pvp.net/api/lol/na/v4.1/game/ids?beginDate=1428314700&api_key=
+
+Get Match id (with timeline)
+https://na.api.pvp.net/api/lol/na/v2.2/match/1786138920?includeTimeline=true&api_key=
+
+
+*/
+
+

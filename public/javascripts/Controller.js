@@ -19,6 +19,8 @@ $(document).ready(function() {
 		console.log("Search for : " + searchName);
 		currentlySearching = true;
 
+		$('.resultText').text("");
+
 		// sets the Searching... animation running
 		searchingAnimation = setInterval(function() {
 			var dotsToAdd = "";
@@ -44,6 +46,7 @@ $(document).ready(function() {
 				currentlySearching = false;
 
 				var messageToDisplay = "Error!!!";
+				var searchSuccess = false;
 
 				// data has data from the server as a response to summoner name
 				if(data == "error") {
@@ -57,10 +60,9 @@ $(document).ready(function() {
 				}
 				else {
 					$('.searchBox').val("");
-					// console.log("Sucess! Data: \n" + data);
 					messageToDisplay = "Success! Please choose a match:";
 					
-					parseMatchData(JSON.parse(data));
+					searchSuccess = true;
 				}
 
 				clearInterval(searchingAnimation);
@@ -68,6 +70,9 @@ $(document).ready(function() {
 
 				// sets the text of the description to the response
 				$('.searchDescription').text(messageToDisplay);
+
+				// call to parse the returned match data
+				parseMatchData(JSON.parse(data));
 			}
 		);
 
@@ -78,11 +83,18 @@ $(document).ready(function() {
 var parseMatchData = function (matchData) {
 	var parsedData = "";
 
+	worked = false;
 	// make the variable matchArray contain the array of Matches
 	for(matchArray in matchData) {
+		worked = true;
 		// console.log("Data: " + matchArray);
 		// console.log("\n\nData 2: " + matchData[matchArray]);
 		break;
+	}
+
+	if(!worked) {
+		$('.searchDescription').text("No match history found.");
+		return;
 	}
 
 	for(var i = 0; i < matchData[matchArray].length; i++) {
