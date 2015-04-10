@@ -121,21 +121,6 @@ APIManager.getMostRecentChallengerAPI = function (beginDate, callback, errorCall
 	var challengerAPIData = this.makeRequest("https://na.api.pvp.net/api/lol/na/v4.1/game/ids?beginDate=" + beginDate + "&api_key=" + this.API_Key, callback, errorCallback);
 }
 
-var currentTime = Date.now();
-
-console.log("CurrentTime: " + currentTime);
-
-var getTruncatedFiveMinTime = function(timeVar) {
-	timeVar *= 0.01;
-	timeVar = Math.floor(timeVar);
-	timeVar *= 100;
-	return timeVar;
-}
-
-currentTime = getTruncatedFiveMinTime(currentTime);
-
-console.log(currentTime + " needs to be something like: 1428314700");
-
 //TODO: 40 requests for summoner data is allowed per call. optomize
 
 /*
